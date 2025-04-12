@@ -1,0 +1,27 @@
+<ul>
+  @for(tag of tags; track $index) {
+    <li (dblclick)="editerTag(tag)">
+      <app-tag
+        [id]="tag.id"
+        [name]="tag.name"
+        [color]="tag.color"
+        (delete)="supprimerTag($event)"
+      ></app-tag>
+    </li>
+  } @empty {
+    <li>Aucun tag !</li>
+  }
+</ul>
+
+<a href="#" (click)="nouveauTag(); $event.preventDefault()">Ajouter une étiquette</a>
+
+<form *ngIf="editing" (ngSubmit)="enregistrerTag()" #tagForm="ngForm">
+  <label>Nom :</label>
+  <input type="text" [(ngModel)]="editing!.name" name="name" required />
+
+  <label>Couleur :</label>
+  <input type="color" [(ngModel)]="editing!.color" name="color" required />
+
+  <button type="submit">Enregistrer</button>
+  <button type="button" (click)="annulerEdition()">Annuler</button>
+</form>
