@@ -1,6 +1,6 @@
 li {
-    cursor: pointer;
-  }
+  cursor: pointer;
+}
 li:hover{
-    background-color: aqua;
+  background-color: aqua;
 }

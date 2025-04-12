@@ -1,127 +1,16 @@
-:root {
-    --primary-color:#5cafe7;
-    --secondary-color: #82cef9;
-    --background-color:#f4f4f4;
-    --text-color:#333;
-    --container-bg:#fff;
-    --buttom-text-color:white;
-    --font-family:Arial, sans-serif;
-    --accent-focus: #ffe361;
-}
-
-a:hover,
-a:focus,
-a:visited:hover,
-a:visited:focus{
-    color:var(--accent-focus);
-    text-decoration: underline;
-}
-html,body{
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-body{
-    font-family: var(--font-family);
-    background-color: var(--background-color);
-    margin: 0;
-    padding: 0;
-    color: var(--text-color);    
-}
-
-.page{
+.main-layout {
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    height: calc(100vh - 120px); /* adapte à la taille de ton header/footer */
+  }
+  
+.tags-panel {
+    width: 20%;
+    padding: 1rem;
+    border-right: 1px solid #ccc;
+    background-color: #f8f8f8;
 }
 
-main{
-    flex:1;
-}
-
-header{
-    display: grid;
-    grid-template-columns: 1fr, 3fr;
-    font-family: var(--font-family);
-    background-color: var(--primary-color);
-    padding: 15px, 20px;
-    color: var(--text-color);
-    align-items: center;
-}
-.header-title{
-    font-size: 1.5em;
-    font-weight: bold;
-    padding-left: 2%;
-    padding-top: 1%;
-}
-.header-options{
-    display: flex;
-    text-decoration: none;
-    justify-content: flex-end;
-    gap : 20px;
-}
-
-.header-note{
-    background-color:var(--secondary-color);
-}
-
-nav,ul,li{
-    list-style : none;
-}
-
-.notes-list{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap :20px;
-    padding: 20px;
-}
-
-.note{
-    background-color: var(--background-color);
-    padding : 10px;
-    border-radius: 8px;
-    box-shadow: 2px 2px 10 px rgba(0 0 0 .1);
-    text-align: justify;
-}
-
-.footer {
-    background-color: var(--primary-color);
-    color: white;
-    text-align: center;
-    padding: 10px 20px;
-    margin-top: 40px;
-    font-size: 1em;
-}
-
-footer a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-footer a:hover {
-    color: var(--accent-focus);
-    text-decoration: underline;
-}
-
-h2{
-    text-align: center;
-}
-
-.footer_note{
-    margin-top: 10px;
-}
-
-.modifier{
-    text-align: left;
-}
-
-.agrandir{
-    text-align: center;
-}
-
-.supprimer{
-    text-align: right;
+.notes-panel {
+    width: 80%;
+    padding: 1rem;
 }

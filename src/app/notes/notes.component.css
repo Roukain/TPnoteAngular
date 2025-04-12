@@ -1,0 +1,9 @@
+h3, li {
+    cursor: pointer;
+  }
+h3:hover{
+    background-color: royalblue;
+}
+li:hover{
+    background-color: blue;
+}

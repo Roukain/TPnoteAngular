@@ -46,6 +46,7 @@ export class TagsComponent implements OnInit{
   }
 
   editerTag(tag: Tag) {
+    //Permet de modifier une copie du tag, sans modifier l'original
     this.editing = { ...tag };
   }
 
@@ -54,17 +55,24 @@ export class TagsComponent implements OnInit{
   }
 
   enregistrerTag() {
+    //vérifier si l'étiquette est en cours d'édition
+    if(!this.editing) return
+
+    //On regarde si l'on crée ou si l'on modifie une note
     if (this.editing) {
       if (this.editing.id === 0) {
+        //Ici on créé
         this.editing.id = Date.now();
         this.tags.push(this.editing);
       } else {
+        //ici on modifie
         const index = this.tags.findIndex(t => t.id === this.editing!.id);
+        //On utilise une fonction lambda pour récupérer l'id de la note à modifier
         if (index !== -1) this.tags[index] = this.editing;
       }
 
       this.storage.saveTags(this.tags);
-      this.editing = null;
+      this.annulerEdition();
     }
   }
 }

@@ -4,9 +4,15 @@
     </nav>
   </div>
 </header>
-<main>
-  <router-outlet></router-outlet>
+<main class="main-layout">
+  <aside class="tags-panel">
+    <app-tags></app-tags>
+  </aside>
+  <section class="notes-panel">
+    <router-outlet></router-outlet>
+  </section>
 </main>
+
 <footer class = "footer">
   <p>Programmation Web M1 S2</p>
 </footer>
