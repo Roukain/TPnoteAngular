@@ -2,14 +2,12 @@ import { Component } from '@angular/core';
 import { Note } from '../../models/note.model';
 import { StorageService } from '../storage.service';
 import { FormsModule } from '@angular/forms';
-import { NgIf } from '@angular/common';  
 import { Tag } from '../../models/tag.models';
 import { CommonModule } from '@angular/common';
-import { TagComponent } from '../tag/tag.component';
 
 @Component({
   selector: 'app-notes',
-  imports: [FormsModule, NgIf, TagComponent, CommonModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './notes.component.html',
   styleUrl: './notes.component.css'
 })

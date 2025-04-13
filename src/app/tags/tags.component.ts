@@ -3,13 +3,13 @@ import { StorageService } from '../storage.service';
 import { Tag } from '../../models/tag.models';
 import { TagComponent } from '../tag/tag.component';
 import { FormsModule } from '@angular/forms';
-import { NgIf } from '@angular/common';  
+import { CommonModule, NgIf } from '@angular/common';  
 
 @Component({
   selector: 'app-tags',
   templateUrl: './tags.component.html',
   styleUrl: './tags.component.css',
-  imports:[TagComponent, FormsModule, NgIf]
+  imports:[TagComponent, FormsModule, NgIf, CommonModule]
 })
 export class TagsComponent implements OnInit{
   tags : Tag[]=[];

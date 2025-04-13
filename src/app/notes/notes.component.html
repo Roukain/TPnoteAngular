@@ -3,12 +3,15 @@
         <li (dblclick)="editerNote(note)">
         <h3>{{ note.title }}</h3>
         <p>{{ note.content }}</p>
-            <ul *ngIf="note.tags.length > 0">
-                @for(tag of note.tags; track $index)
-                <li>
-                #{{ tag.name }}
-                </li>
-            </ul>
+            @if (note.tags.length > 0){
+                <ul>
+                    @for(tag of note.tags; track $index){
+                        <li>
+                        #{{ tag.name }}
+                        </li>
+                    }
+                </ul>
+            }
         <button (click)="supprimerNote(note.id)">🗑️ Supprimer</button>
       </li>
     } @empty {
@@ -17,22 +20,22 @@
 </ul>
   
 <a href="#" (click)="nouvelleNote(); $event.preventDefault()">Ajouter une note</a>
-  
-<form *ngIf="editing" (ngSubmit)="enregistrerNote()" #noteForm="ngForm">
-    <label>Titre :</label>
-    <input type="text" [(ngModel)]="editing!.title" name="title" required />
-  
-    <label>Contenu :</label>
-    <textarea [(ngModel)]="editing!.content" name="content" required></textarea>
+@if(editing) {
+    <form (ngSubmit)="enregistrerNote()" #noteForm="ngForm">
+        <label>Titre :</label>
+        <input type="text" [(ngModel)]="editing!.title" name="title" required />
+    
+        <label>Contenu :</label>
+        <textarea [(ngModel)]="editing!.content" name="content" required></textarea>
 
-  
-    <button type="submit">✅ Enregistrer</button>
-    <button type="button" (click)="annulerEdition()">❌ Annuler</button>
+    
+        <button type="submit">✅ Enregistrer</button>
+        <button type="button" (click)="annulerEdition()">❌ Annuler</button>
 
-    <div>
-        <input type="text" placeholder="Nom du nouveau tag" [(ngModel)]="newTagName" name="newTag" />
-        <button type="button" (click)="ajouterTag()">+ Ajouter une étiquette</button>
-    </div>
-      
-</form>
-  
+        <div>
+            <input type="text" placeholder="Nom du nouveau tag" [(ngModel)]="newTagName" name="newTag" />
+            <button type="button" (click)="ajouterTag()">+ Ajouter une étiquette</button>
+        </div>
+        
+    </form>
+}
