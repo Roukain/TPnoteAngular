@@ -30,7 +30,7 @@ export class NotesComponent {
   }
 
   nouvelleNote(){
-    this.editing = {id : 0, title:'', content :'', tags : [] }
+    this.editing = {id : 0, title:'', content :'', tags : [], isList:false,color:'#DDDDDD'}
   }
 
   editerNote(note : Note){

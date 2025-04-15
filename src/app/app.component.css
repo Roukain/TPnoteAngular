@@ -1,6 +1,10 @@
+.main-layout,.header-title, .footer{
+    font-family: Arial, Helvetica, sans-serif;
+} 
+
 .main-layout {
     display: flex;
-    height: calc(100vh - 120px); /* adapte à la taille de ton header/footer */
+    height: calc(100vh - 120px);
   }
   
 .tags-panel {

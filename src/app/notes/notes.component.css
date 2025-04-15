@@ -1,9 +1,27 @@
-h3, li {
-    cursor: pointer;
-  }
-h3:hover{
-    background-color: royalblue;
+
+
+.gridNote{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
 }
-li:hover{
-    background-color: blue;
+
+.NoteList{
+    padding: 10px;
+    list-style: none;
+    background-color: beige;
+    cursor: pointer;
+}
+
+.noteBox{
+    padding: 10px;
+}
+
+.linkedTags{
+    list-style: none;
+    justify-items:right;
+}
+
+.deleteNote{
+  display: block;
+  margin: 0 auto;
 }

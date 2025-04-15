@@ -5,11 +5,15 @@ export class Note {
     'title':string;
     'content':string;
     'tags':Tag[];
+    'isList':Boolean = false;
+    'color':string;
 
-    constructor(id:number, title:string, content:string, tags:Tag[]){
+    constructor(id:number, title:string, content:string, tags:Tag[], isList:Boolean, color:string){
         this.id=id;
         this.title=title;
         this.content=content;
         this.tags=tags;
+        this.isList = isList;
+        this.color = color;
     }
 }
