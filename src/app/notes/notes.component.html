@@ -12,7 +12,7 @@
                     }
                 </ul>
             }
-        <button (click)="supprimerNote(note.id)">🗑️ Supprimer</button>
+        <button (click)="supprimerNote(note.id)">Supprimer</button>
       </li>
     } @empty {
       <li>Aucune note !</li>
@@ -29,8 +29,8 @@
         <textarea [(ngModel)]="editing!.content" name="content" required></textarea>
 
     
-        <button type="submit">✅ Enregistrer</button>
-        <button type="button" (click)="annulerEdition()">❌ Annuler</button>
+        <button type="submit">Enregistrer</button>
+        <button type="button" (click)="annulerEdition()">Annuler</button>
 
         <div>
             <input type="text" placeholder="Nom du nouveau tag" [(ngModel)]="newTagName" name="newTag" />
