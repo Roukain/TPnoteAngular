@@ -1,6 +1,15 @@
-li {
+.listTags {
   cursor: pointer;
 }
-li:hover{
-  background-color: aqua;
+.listTags:hover{
+  background-color: rgb(244, 197, 163);
+}
+.emptyTags{
+  background-color: gray;
+}
+
+.endFormButton{
+  display: block;
+  margin-bottom: 2px;
+  margin: 0 auto;
 }

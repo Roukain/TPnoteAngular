@@ -26,44 +26,46 @@
         </li>
     } 
     @empty {
-        <li>Aucune note !</li>
+        <li class="NoteList">Aucune note !</li>
     }
 </ul>
   
 <a href="#" (click)="nouvelleNote(); $event.preventDefault()">Ajouter une note</a>
 @if(editing) {
-    <form (ngSubmit)="enregistrerNote()" #noteForm="ngForm">
+    <form (ngSubmit)="enregistrerNote()" #noteForm="ngForm" >
 
-        <div>
+        <div class="editingFormElement">
             <label>Titre :</label>
-            <input type="text" [(ngModel)]="editing!.title" name="title" required />
+            <br/>
+            <input type="text" [(ngModel)]="editing!.title" name="title" required class="title"/>
         </div>
 
-        <div>
+        <div class="editingFormElement">
             <label>Contenu : </label>
-            <textarea [(ngModel)]="editing!.content" name="content" required></textarea>
+            <br/>
+            <textarea [(ngModel)]="editing!.content" name="content" required class="content"></textarea>
         </div>
 
-        <div>
+        <div class="editingFormElement">
             <label>
                 <input type ="checkbox" [(ngModel)]="editing!.isList" name ="isList" />
                 Afficher la note comme une liste
             </label>
         </div>
 
-        <div>
+        <div class="editingFormElement">
             <label>
                 <input type="color" [(ngModel)]="editing!.color" name="color" required />
                 Choix de la couleur de fond
             </label>
         </div>
 
-        <div>
+        <div class="editingFormElement">
             <input type="text" placeholder="Nom du nouveau tag" [(ngModel)]="newTagName" name="newTag" />
             <button type="button" (click)="ajouterTag()">+ Ajouter une étiquette</button>
         </div>
 
-        <div>
+        <div class="editingFormElement">
             <button type="submit">Enregistrer</button>
             <button type="button" (click)="annulerEdition()">Annuler</button>
         </div>

@@ -1,5 +1,4 @@
 
-
 .gridNote{
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -24,4 +23,17 @@
 .deleteNote{
   display: block;
   margin: 0 auto;
+}
+
+.title{
+    width: 45%;
+}
+
+.content{
+    width: 45%;
+    height: 100px;
+}
+
+.editingFormElement{
+    margin-top: 5px;
 }
